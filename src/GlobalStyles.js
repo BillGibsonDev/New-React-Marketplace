@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
     width: 70%;
     max-width: 1000px;
-    background: #d8d8d8;
+    background: #2b2b2b;
     font-family: 'Raleway', sans-serif;
     letter-spacing: .5px;
     line-height: 1.5;

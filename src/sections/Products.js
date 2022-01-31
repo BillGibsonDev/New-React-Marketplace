@@ -84,23 +84,19 @@ const StyledProducts = styled.div`
             margin: auto;
             position: relative;
             overflow-x: scroll;
-            -ms-overflow-style: none;   /* Internet Explorer 10+ */
             scrollbar-width: thin;          /* "auto" or "thin" */
             scrollbar-color: #4e4e4e #fff;   /* scroll thumb and track */
             &::-webkit-scrollbar {
                 width: 12px;
             }
             &::-webkit-scrollbar-track {
-                background: orange;
+                background: #fff;
             }
             &::-webkit-scrollbar-thumb {
-                background-color: blue;
+                background-color: #fff;
                 border-radius: 20px;
-                border: 3px solid orange;
+                border: 3px solid #4e4e4e;
             }
         }
-        .product-container::-webkit-scrollbar { 
-            display: none;  /* Safari and Chrome */
-        } 
     }
 `;

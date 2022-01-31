@@ -2,6 +2,9 @@
 // styled
 import styled from 'styled-components';
 
+// router
+import { Link } from 'react-router-dom';
+
 export default function Categories({products}) {
 
     return (
@@ -13,22 +16,22 @@ export default function Categories({products}) {
                         <h2>No Products Found</h2>
                     ): (
                         <div className="category-container" id="category-container">
-                            <a href="" className="category">
+                            <Link to={`/${products[19].category}`} className="category">
                                 <img src={products[19].image} alt="" />
                                 <h2>Women's Clothing</h2>
-                            </a>
-                            <a href="" className="category">
+                            </Link>
+                            <Link to={`/${products[1].category}`} className="category">
                                 <img src={products[1].image} alt="" />
-                            <h2>Men's Clothing</h2>
-                            </a>
-                            <a href="" className="category">
+                                <h2>Men's Clothing</h2>
+                            </Link>
+                            <Link to={`/${products[5].category}`} className="category">
                                 <img src={products[5].image} alt="" />
                                 <h2>Accessories</h2>
-                            </a>
-                            <a href="" className="category">
+                            </Link>
+                            <Link to={`/${products[10].category}`} className="category">
                                 <img src={products[10].image} alt="" />
                                 <h2>Electronics</h2>
-                            </a>
+                            </Link>
                         </div>
                     )
                 }
