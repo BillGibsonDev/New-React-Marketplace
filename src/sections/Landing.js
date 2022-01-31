@@ -1,7 +1,7 @@
 
 
 // images
-import LandingImage from '../images/landingImage.jpg';
+import LandingImage from '../images/landing2.jpg';
 import Cart from '../images/cart.png';
 
 // styled
@@ -29,7 +29,8 @@ export default function HomePage({products}) {
                             <h3>Style.</h3>
                         </div>
                         <div className="right-container">
-                            <h3>It's more than just fashion.</h3>
+                            <h3>Attitude.</h3>
+                            <h3>Coinfidence.</h3>
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,7 @@ export default function HomePage({products}) {
 
 const StyledLanding = styled.div`
     margin: 50px 0;
-    min-height: 80vh;
+    min-height: 70vh;
     margin-bottom: 40px;
     border-radius: 12px;
     position: relative;
@@ -49,7 +50,7 @@ const StyledLanding = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 12px;
-        opacity: .7;
+        
         img {
             width: 100%;
             height: 100%;
@@ -93,7 +94,7 @@ const StyledLanding = styled.div`
     }
     .text-container {
         position: relative;
-        margin-top: 30%;
+        margin-top: 40%;
         .right-container, .left-container {
             background: #ffffffb3;
             display: flex;
