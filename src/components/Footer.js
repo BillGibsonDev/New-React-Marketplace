@@ -48,7 +48,7 @@ const StyledFooter = styled.footer`
   margin-bottom: 20px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  @media (max-width: 375px){
+  @media (max-width: 600px){
     margin-bottom: 0;
   }
   .footer-wrapper {

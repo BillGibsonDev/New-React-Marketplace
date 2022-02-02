@@ -76,6 +76,10 @@ const StyledCategory = styled.div`
         position: relative;
         h1 {
             text-transform: capitalize;
+            margin: 5% auto;
+            @media (max-width: 600px){
+                font-size: 25px;
+            }
         }
         .product-container {
             display: grid;
@@ -84,9 +88,15 @@ const StyledCategory = styled.div`
             padding: 20px 0;
             margin: auto;
             position: relative;
+            @media (max-width: 800px){
+                grid-template-columns: 1fr 1fr;
+            }
+            @media (max-width: 600px){
+                grid-template-columns: 1fr;
+            }
             .placeholder {
                 min-width: 300px;
-                min-height: 350px;
+                min-height: 350px; 
                 position: relative;
                 background: white;
                 border: #e2e2e2 1px solid;

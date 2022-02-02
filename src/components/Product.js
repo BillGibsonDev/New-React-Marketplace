@@ -51,6 +51,11 @@ const StyledProduct = styled.div`
   margin: 0 20px;
   border-radius: 8px;
   padding: 6px 2px;
+  @media (max-width: 600px){
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
     .product-wrapper {
       display: flex;
       flex-direction: column;

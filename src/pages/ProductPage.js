@@ -89,6 +89,9 @@ const StyledProduct = styled.div`
   margin-top: 20px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  @media (max-width: 600px){
+    margin-top: 0;
+  }
   .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
