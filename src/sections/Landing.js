@@ -4,6 +4,9 @@
 import LandingImage from '../images/landing2.jpg';
 import Cart from '../images/cart.png';
 
+// router
+import { Link } from 'react-router-dom';
+
 // styled
 import styled from 'styled-components';
 
@@ -17,31 +20,35 @@ export default function HomePage({products}) {
             </div>
                 <div className="landing-container">
                     <div className="nav-wrapper">
-                        <a href="">Logo</a>
+                        <Link to={"/"} id="logo">B.</Link>
                         <nav>
-                            <a href="">Home</a>
-                            <a href="">Shop</a>
+                            <Link to={"/"}>Home</Link>
+                            <Link to={"/"}>Shop</Link>
                         </nav>
-                        <a href=""><img id="cart" src={Cart} alt="" /></a>
+                        <Link to={"/cart"}><img id="cart" src={Cart} alt="" /></Link>
                     </div>
                     <div className="text-container">
-                        <div className="left-container">
-                            <h3>Style.</h3>
+                        <div className="top-container">
+                            <h3 id='top-text'>Style.</h3>
                         </div>
-                        <div className="right-container">
+                        <div className="middle-container">
                             <h3>Attitude.</h3>
-                            <h3>Coinfidence.</h3>
+                        </div>
+                        <div className="bottom-container">
+                            <h3>Confidence.</h3>
                         </div>
                     </div>
+                        <h1 id="brand">Branded.</h1>
+                        <div className="button-container">
+                            <Link to={"/"} id="shop-button">Shop</Link>
+                        </div>
                 </div>
         </StyledLanding>
     );
 }
 
 const StyledLanding = styled.div`
-    margin: 50px 0;
     min-height: 70vh;
-    margin-bottom: 40px;
     border-radius: 12px;
     position: relative;
     .background-image {
@@ -49,12 +56,15 @@ const StyledLanding = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        border-radius: 12px;
-        
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        opacity: .9;
+        animation: backgroundOpacityOnLoad 3s 1;
         img {
             width: 100%;
             height: 100%;
-            border-radius: 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
         }
     }
     .landing-container {
@@ -85,17 +95,55 @@ const StyledLanding = styled.div`
                 color: #000000;
                 font-size: 20px;
                 font-weight: 700;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            #logo {
+                font-size: 3em;
+                letter-spacing: -3px;
+                font-weight: 700;
             }
             #cart {
                 width: 40px;
                 height: 40px;
             }
         }
+        #brand {
+            color: white;
+            font-size: 7em;
+            display: flex;
+            justify-content: flex-end;
+            width: 90%;
+            animation: opacityOnLoad 4s 1;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 89%;
+            animation: opacityOnLoad 4s 1;
+                #shop-button {
+                    background: #000000;
+                    padding: 0 100px;
+                    font-size: 40px;
+                    color: white;
+                    border: 2px white solid;
+                    transition: 0.2s;
+                    font-weight: bold;
+                    &:hover {
+                        color: black;
+                        background: #fff;
+                        text-decoration: underline;
+                        border: #000000 solid 2px;
+                    }
+                }
+        }
+        
     }
     .text-container {
         position: relative;
-        margin-top: 40%;
-        .right-container, .left-container {
+        margin-top: 20%;
+        .middle-container, .top-container, .bottom-container {
             background: #ffffffb3;
             display: flex;
             justify-content: flex-end;
@@ -106,13 +154,20 @@ const StyledLanding = styled.div`
             h3 {
                 font-size: 30px;
                 padding-right: 4px;
+                animation: opacityOnLoad 2s 1;
             }
         }
-        .left-container {
+        .top-container {
             width: 30%;
+            animation: widthOnLoad 2s 1;
         }
-        .right-container {
-            width: 70%;
+        .middle-container {
+            width: 40%;
+            animation: widthOnLoadMiddle 2s 1;
+        }
+        .bottom-container {
+            width: 50%;
+            animation: widthOnLoadBottom 2s 1;
         }
     }
 
@@ -121,19 +176,24 @@ const StyledLanding = styled.div`
         to { width: 30%; }
     }
 
-    @keyframes widthOnLoadBottom {
-        from { width: 0; }
-        to { width: 70%; }
+    @keyframes opacityOnLoad {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
-    @keyframes opacityOnLoad {
-        from { 
-            display: none;
-            opacity: 0;
-        }
-        to { 
-            display: block;
-            opacity: 1;
-        }
+    @keyframes backgroundOpacityOnLoad {
+        from { opacity: 0; }
+        to { opacity: .9; }
     }
+
+    @keyframes widthOnLoadMiddle {
+        from { width: 0; }
+        to { width: 40%; }
+    }
+
+    @keyframes widthOnLoadBottom {
+        from { width: 0; }
+        to { width: 50%; }
+    }
+
 `;

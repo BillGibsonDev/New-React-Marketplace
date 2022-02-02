@@ -16,48 +16,59 @@ export default function HomePage({products}) {
 
     const scroll = (scrollOffset) => {
         buttonRef.current.scrollLeft += scrollOffset;
-        console.log(buttonRef)
-        console.log(scrollOffset)
-        console.log(buttonRef.current)
     };
-    console.log(scroll)
-
 
     return (
         <StyledProducts>
             <div className="product-wrapper">
                 <h1>All Products</h1>
-                <button id="left-button" ref={buttonRef} onClick={() => scroll(-100)}><img src={Left} alt="" /></button>
-                <button id="right-button" ref={buttonRef} onClick={() => scroll(100)}><img src={Right} alt="" /></button>
-                <div className="product-container" id="product-container">
-                    {
-                        products.map((product, key) =>{
-                            return (
-                                <Product
-                                    title={product.title}
-                                    image={product.image}
-                                    description={product.description}
-                                    category={product.category}
-                                    price={product.price}
-                                    id={product.id}
-                                    key={key}
-                                />
-                            )
-                        })
-                    }
-                </div>
+                {
+                    products.length === 0 ? (
+                        <div className="product-container" id="product-container">
+                            <div className="placeholder "></div>
+                            <div className="placeholder "></div>
+                            <div className="placeholder "></div>
+                            <div className="placeholder "></div>
+                        </div>
+                    ): (
+                        <>
+                            <button id="left-button" ref={buttonRef} onClick={() => scroll(-100)}><img src={Left} alt="" /></button>
+                            <button id="right-button" ref={buttonRef} onClick={() => scroll(100)}><img src={Right} alt="" /></button>
+                            <div className="product-container" id="product-container">
+                                {
+                                    products.map((product, key) =>{
+                                        return (
+                                            <Product
+                                                title={product.title}
+                                                image={product.image}
+                                                description={product.description}
+                                                category={product.category}
+                                                price={product.price}
+                                                count={product.rating.count}
+                                                rate={product.rating.rate}
+                                                id={product.id}
+                                                key={key}
+                                            />
+                                        )
+                                    })
+                                }
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </StyledProducts>
     );
 }
 
 const StyledProducts = styled.div`
-    margin: 50px 0;
+    min-height: 60vh;
+    background: #f3f3f3;
+    padding: 10% 0;
     .product-wrapper {
         display: flex;
         flex-direction: column;
-        background: #fff;
-        border-radius: 12px;
+        background: #ffffff;
         position: relative;
         h1 {
             width: 95%;
@@ -78,6 +89,7 @@ const StyledProducts = styled.div`
             right: 0;
         }
         .product-container {
+            min-height: 45vh;
             display: flex;
             padding: 10px 0;
             width: 95%;
@@ -96,6 +108,21 @@ const StyledProducts = styled.div`
                 background-color: #fff;
                 border-radius: 20px;
                 border: 3px solid #4e4e4e;
+            }
+            .placeholder {
+                min-width: 300px;
+                min-height: 350px;
+                position: relative;
+                background: white;
+                border: #e2e2e2 1px solid;
+                border-radius: 4px;
+                box-shadow: 3px 3px 3px #c2c2c2;
+                padding: 6px;
+                opacity: .8;
+                margin-right: 10px;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }

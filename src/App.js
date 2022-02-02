@@ -6,7 +6,6 @@ import GlobalStyles from './GlobalStyles';
 import { Routes, Route } from 'react-router-dom';
 
 // components
-import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 // pages
@@ -18,14 +17,11 @@ import CategoryPage from './pages/CategoryPage';
 function App() {
 
   const [ products, setProducts ] = useState([]);
-  const [ cart, setCart ] = useState([]);
-
 
   useEffect(() => {
     function handleProducts(){
       axios.get(`https://fakestoreapi.com/products`)
       .then(function(response){
-        console.log(response.data)
         setProducts(response.data)
       })
     }
@@ -37,14 +33,12 @@ function App() {
     <>
       <GlobalStyles />
 
-      <Nav />
-
       <Routes>
             <Route path='/' exact element={<HomePage products={products} />} />
 
-            <Route path="/:id" exact element={<ProductPage products={products} />} />
+            <Route path="/products/:id" exact element={<ProductPage products={products} />} />
 
-            <Route path="/:category" exact element={<CategoryPage products={products} />} />
+            <Route path="/category/:category" exact element={<CategoryPage products={products} />} />
 
             <Route path="/cart" exact element={<CartPage products={products} />} />
       </Routes>

@@ -1,17 +1,42 @@
+
 // router
 import { Link } from 'react-router-dom';
 
 // styled
 import styled from 'styled-components';
 
-export default function Product({title, image, id, description, category, price}) {
+// images
+import Star from '../images/star.png';
+
+export default function Product({title, image, id, rate, count, price}) {
+
   return ( 
     <StyledProduct>
       <div className="product-wrapper">
-        <Link to={`/${id}`}><img src={image} alt="" /></Link>
+        <Link to={`/products/${id}`}><img src={image} alt="" /></Link>
         <div className="title-wrapper">
-          <h2>{title}</h2>
-          <h3>{price}</h3>
+          <Link to={`/products/${id}`}>{title}</Link>
+          <div className="rating-container">
+            <div className="rate-container" >
+              {
+                Math.round(rate) === isNaN ? (
+                  <h2>No rating found</h2>
+                 ): rate === undefined ? (
+                   <h1>Rate not found</h1>
+                 ): (
+                   <>
+                      { 
+                        Array.from(Array(Math.round(rate)), (e, i) => {
+                          return <img src={Star} key={i} alt="" />
+                        })
+                      }
+                  </>
+                )
+              }
+            </div>
+            <h4>{count}</h4>
+          </div>
+          <h3>$ {price}</h3>
         </div>
       </div>
     </StyledProduct>
@@ -25,6 +50,7 @@ const StyledProduct = styled.div`
   background: white;
   margin: 0 20px;
   border-radius: 8px;
+  padding: 6px 2px;
     .product-wrapper {
       display: flex;
       flex-direction: column;
@@ -40,13 +66,33 @@ const StyledProduct = styled.div`
       .title-wrapper {
         display: flex;
         flex-direction: column;
-        h2 {
+        a {
           font-size: 13px;
-
+          color: black;
+          &:hover {
+            text-decoration: underline;
+          }
         }
+        .rating-container {
+                display: flex;
+                align-items: center;
+                margin: 4px 0;
+                .rate-container{
+                    display: flex;
+                    align-items: center;
+                    img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                h4 {
+                    margin-left: 10px;
+                    font-size: 16px;
+                }
+            }
         h3 {
           color: #2e2e2e;
-          font-size: 12px;
+          font-size: 18px;
         }
       }
     }

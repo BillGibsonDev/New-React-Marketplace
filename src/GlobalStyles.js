@@ -9,10 +9,10 @@ const GlobalStyles = createGlobalStyle`
 html {
     margin: auto;
     scroll-behavior: smooth;
-    width: 70%;
+    width: 80%;
     max-width: 1000px;
     background: #2b2b2b;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Playfair Display', serif;
     letter-spacing: .5px;
     line-height: 1.5;
     @media (max-width: 1450px){
@@ -33,19 +33,9 @@ ul {
 a {
     text-decoration: none;
 }
-input {
-    height: 30px;
-    width: 300px;
-    border-radius: 4px;
-    background: #adadad;
-    @media (max-width: 850px){
-        width: 150px;
-    }
-}
 button {
     letter-spacing: 1px;
     cursor: pointer;
-    border-radius: 0;
 }
 `;
 
