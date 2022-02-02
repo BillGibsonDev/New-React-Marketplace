@@ -43,12 +43,11 @@ const StyledNav = styled.nav`
       font-size: 20px;
       font-weight: 700;
       &:hover {
-          text-decoration: underline;
+        text-decoration: underline;
       }
   }
   #logo {
       font-size: 3em;
-      letter-spacing: -3px;
       font-weight: 700;
   }
   #cart {

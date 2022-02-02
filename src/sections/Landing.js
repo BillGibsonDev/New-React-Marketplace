@@ -38,19 +38,22 @@ export default function HomePage({products}) {
                             <h3>Confidence.</h3>
                         </div>
                     </div>
-                        <h1 id="brand">Branded.</h1>
-                        <div className="button-container">
-                            <Link to={"/"} id="shop-button">Shop</Link>
-                        </div>
+                    <h1 id="brand">Branded.</h1>
+                    <div className="button-container">
+                        <Link to={"/"} id="shop-button">Shop</Link>
+                    </div>
                 </div>
         </StyledLanding>
     );
 }
 
 const StyledLanding = styled.div`
-    min-height: 70vh;
+    min-height: 90vh;
     border-radius: 12px;
     position: relative;
+    @media (max-width: 600px){
+        min-height: 70vh;
+    }
     .background-image {
         z-index: -1;
         position: absolute;
@@ -58,13 +61,16 @@ const StyledLanding = styled.div`
         height: 100%;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
-        opacity: .9;
+        opacity: 1;
         animation: backgroundOpacityOnLoad 3s 1;
         img {
             width: 100%;
             height: 100%;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
+            @media (max-width: 600px){
+                object-fit: cover;
+            }
         }
     }
     .landing-container {
@@ -101,7 +107,6 @@ const StyledLanding = styled.div`
             }
             #logo {
                 font-size: 3em;
-                letter-spacing: -3px;
                 font-weight: 700;
             }
             #cart {
@@ -116,33 +121,39 @@ const StyledLanding = styled.div`
             justify-content: flex-end;
             width: 90%;
             animation: opacityOnLoad 4s 1;
+            @media (max-width: 375px){
+                margin-top: 20%;
+            }
         }
         .button-container {
             display: flex;
             justify-content: flex-end;
             width: 89%;
             animation: opacityOnLoad 4s 1;
-                #shop-button {
-                    background: #000000;
-                    padding: 0 100px;
-                    font-size: 40px;
-                    color: white;
-                    border: 2px white solid;
-                    transition: 0.2s;
-                    font-weight: bold;
-                    &:hover {
-                        color: black;
-                        background: #fff;
-                        text-decoration: underline;
-                        border: #000000 solid 2px;
-                    }
+            #shop-button {
+                background: #000000;
+                padding: 0 100px;
+                font-size: 40px;
+                color: white;
+                border: 2px white solid;
+                transition: 0.2s;
+                font-weight: bold;
+                &:hover {
+                    color: black;
+                    background: #fff;
+                    text-decoration: underline;
+                    border: #000000 solid 2px;
                 }
+            }
         }
         
     }
     .text-container {
         position: relative;
         margin-top: 20%;
+        @media (max-width: 375px){
+            margin-top: 30%;
+        }
         .middle-container, .top-container, .bottom-container {
             background: #ffffffb3;
             display: flex;

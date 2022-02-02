@@ -96,6 +96,9 @@ const StyledProduct = styled.div`
     padding: 20px 0;
     margin: auto;
     position: relative;
+    @media (max-width: 600px){
+      grid-template-columns: 1fr;
+    }
     .placeholder {
       min-width: 250px;
       min-height: 70vh;
@@ -122,13 +125,22 @@ const StyledProduct = styled.div`
   .product-wrapper {
     display: flex;
     padding: 5% 0;
+    @media (max-width: 600px){
+      flex-direction: column;
+    }
     img {
       width: 45%;
       margin: auto;
+      @media (max-width: 600px){
+        width: 90%
+      }
     }
     .info-container {
       width: 45%;
       margin: 10% auto;
+      @media (max-width: 600px){
+        width: 90%
+      }
       h1 {
         font-size: 2em;
       }
@@ -150,9 +162,13 @@ const StyledProduct = styled.div`
           color: #5f5f5f;
         }
       }
+      #price {
+        font-size: 20px;
+      }
       #description {
         margin: 10px 0;
         color: #5f5f5f;
+        font-size: 16px;
       }
       #add-button {
         background: #5f5f5f;

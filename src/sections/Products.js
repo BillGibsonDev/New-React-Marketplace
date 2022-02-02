@@ -98,6 +98,9 @@ const StyledProducts = styled.div`
             overflow-x: scroll;
             scrollbar-width: thin;          /* "auto" or "thin" */
             scrollbar-color: #4e4e4e #fff;   /* scroll thumb and track */
+            @media (max-width: 375px){
+                min-height: 50vh;
+            }
             &::-webkit-scrollbar {
                 width: 12px;
             }

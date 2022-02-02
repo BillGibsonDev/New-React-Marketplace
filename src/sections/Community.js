@@ -48,6 +48,9 @@ export default function Community() {
 const StyledCommunity = styled.div`
     min-height: 70vh;
     position: relative;
+    @media (max-width: 600px){
+        min-height: 50vh;
+    }
     .background-image {
         z-index: -1;
         position: absolute;

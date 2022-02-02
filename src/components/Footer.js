@@ -48,15 +48,26 @@ const StyledFooter = styled.footer`
   margin-bottom: 20px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  @media (max-width: 375px){
+    margin-bottom: 0;
+  }
   .footer-wrapper {
     display: flex;
     width: 95%;
     margin: auto;
     justify-content: space-between;
+    @media (max-width: 375px){
+      flex-direction: column;
+      align-items: center;
+    }
     .icon-container {
       display: flex;
       width: 20%;
       justify-content: space-between;
+      @media (max-width: 375px){
+        width: 50%;
+        margin-bottom: 20px;
+      }
       a {
         width: 30px;
         height: 30px;
@@ -76,11 +87,17 @@ const StyledFooter = styled.footer`
       height: 100%;
       margin: auto;
       justify-content: space-between;
+      @media (max-width: 375px){
+        width: 60%;
+      }
       .link-container {
         display: flex;
         flex-direction: column;
         a {
           color: white;
+          @media (max-width: 375px){
+            font-size: 12px;
+          }
           &:hover {
             text-decoration: underline;
           }

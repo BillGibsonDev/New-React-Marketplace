@@ -28,7 +28,7 @@ export default function Promo({products}) {
                         </div>
                     ): (
                         <div className="promo-container">
-                            <img src={Womens} alt="" />
+                            <img id="promo" src={Womens} alt="" />
                             <div className="product-container">
                                 <Link id="image-link" to={`/products/${products[15].id}`}>
                                     <img src={products[15].image} alt="" />
@@ -61,10 +61,20 @@ const StyledPromo = styled.div`
         grid-row-gap: 10px;
         grid-column-gap: 10px;
         position: relative;
-        img {
+        @media (max-width: 375px){
+            grid-template-columns: 1fr;
+            grid-row-gap: 0;
+            grid-column-gap: 0;
+            background: #fff;
+            padding: 2%;
+        }
+        #promo {
             height: 100%;
             width: 100%;
             opacity: .9;
+            @media (max-width: 375px){
+                display: none;
+            }
         }
         .product-container {
             width: 100%;
@@ -74,6 +84,10 @@ const StyledPromo = styled.div`
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @media (max-width: 375px){
+                width: 95%;
+                margin: auto;
+            }
             #image-link {
                 width: 100%;
                 height: 70%;
