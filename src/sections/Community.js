@@ -17,7 +17,7 @@ import Github from '../images/githubWhite.png';
 
 export default function Community() {
 
-
+    console.log(AOS)
     return (
         <StyledCommunity>
             <div className="background-image">
