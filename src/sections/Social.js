@@ -43,7 +43,7 @@ const StyledSocial = styled.div`
         color: #fff;
         font-size: 4em;
         margin-left: 1.5%;
-        @media (max-width: 375px){
+        @media (max-width: 600px){
             margin: auto;
             margin-bottom: 30px;
         }
@@ -54,14 +54,14 @@ const StyledSocial = styled.div`
         align-items: center;
         width: 95%;
         margin: auto;
-        @media (max-width: 375px){
+        @media (max-width: 600px){
             flex-direction: column;
         }
         .icon-container {
             display: flex;
-            width: 20%;
+            width: 30%;
             justify-content: space-between;
-            @media (max-width: 375px){
+            @media (max-width: 600px){
                width: 50%;
                margin-bottom: 20px;
             }
@@ -81,32 +81,37 @@ const StyledSocial = styled.div`
         .form-container {
             display: flex;
             flex-direction: column;
-            @media (max-width: 375px){
+            @media (max-width: 600px){
                 width: 90%;
+                margin: auto;
             }
             h4 {
                 color: white;
                 font-size: 20px;
                 margin-bottom: 6px;
-                @media (max-width: 375px){
+                @media (max-width: 600px){
                     margin: auto;
                     margin-bottom: 6px;
                 }
             }
             form {
                 height: 30px;
-                @media (max-width: 375px){
+                @media (max-width: 600px){
                     width: 100%;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
                 }
                 input {
                     height: 30px;
                     width: 300px;
                     background: #adadad;
                     @media (max-width: 850px){
-                        width: 150px;
+                        width: 250px;
+                        margin: auto;
                     }
-                    @media (max-width: 375px){
-                       width: 80%;
+                    @media (max-width: 600px){
+                       width: 90%;
                     }
                 }
                 button{

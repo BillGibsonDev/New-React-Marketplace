@@ -61,7 +61,7 @@ const StyledPromo = styled.div`
         grid-row-gap: 10px;
         grid-column-gap: 10px;
         position: relative;
-        @media (max-width: 375px){
+        @media (max-width: 450px){
             grid-template-columns: 1fr;
             grid-row-gap: 0;
             grid-column-gap: 0;
@@ -72,7 +72,7 @@ const StyledPromo = styled.div`
             height: 100%;
             width: 100%;
             opacity: .9;
-            @media (max-width: 375px){
+            @media (max-width: 450px){
                 display: none;
             }
         }

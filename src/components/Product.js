@@ -54,7 +54,7 @@ const StyledProduct = styled.div`
   @media (max-width: 600px){
     max-width: 500px;
     width: 100%;
-    margin: auto;
+    margin: auto 50px auto 40px;
   }
     .product-wrapper {
       display: flex;
