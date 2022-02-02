@@ -163,6 +163,7 @@ const StyledProduct = styled.div`
         border: none;
         font-size: 20px;
         border: 1px solid #ffffff;
+        transition: 0.3s;
         &:hover {
           color: #5f5f5f;
           background: white;
