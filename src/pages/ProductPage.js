@@ -13,7 +13,11 @@ import styled from 'styled-components';
 // images
 import Star from '../images/star.png';
 
-export default function ProductPage({products}) {
+// redux
+import { addToCart } from '../redux/actions/cart.js';
+import { useDispatch } from 'react-redux';
+
+export default function ProductPage() {
     
     const { id } = useParams();
 
@@ -29,6 +33,13 @@ export default function ProductPage({products}) {
     handleProducts();
   }, [ id ]);
   
+  const dispatch = useDispatch();
+
+  function handleCart(){
+   dispatch(addToCart(product))
+  }
+
+
   return (
     <StyledProduct>
       <Nav />
@@ -74,7 +85,7 @@ export default function ProductPage({products}) {
             </div>
             <h3 id="price">$ {product.price}</h3>
             <h3 id="description">{product.description}</h3>
-            <button id="add-button">Add to Cart</button>
+            <button id="add-button" onClick={() => handleCart(product)}>Add to Cart</button>
           </div>
         </div>
         )

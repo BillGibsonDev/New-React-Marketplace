@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 
 // Animate on Scroll
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 // images
@@ -17,7 +16,6 @@ import Github from '../images/githubWhite.png';
 
 export default function Community() {
 
-    console.log(AOS)
     return (
         <StyledCommunity>
             <div className="background-image">
@@ -46,7 +44,7 @@ export default function Community() {
 }
 
 const StyledCommunity = styled.div`
-    min-height: 70vh;
+    min-height: 80vh;
     position: relative;
     @media (max-width: 600px){
         min-height: 50vh;

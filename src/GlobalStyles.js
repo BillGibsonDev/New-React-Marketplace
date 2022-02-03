@@ -10,7 +10,7 @@ html {
     margin: auto;
     scroll-behavior: smooth;
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
     background: #2b2b2b;
     font-family: 'Playfair Display', serif;
     letter-spacing: .5px;

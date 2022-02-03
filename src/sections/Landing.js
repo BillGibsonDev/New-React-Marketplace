@@ -138,6 +138,7 @@ const StyledLanding = styled.div`
                 border: 2px white solid;
                 transition: 0.2s;
                 font-weight: bold;
+                transition: 0.3s;
                 &:hover {
                     color: black;
                     background: #fff;
@@ -194,7 +195,7 @@ const StyledLanding = styled.div`
 
     @keyframes backgroundOpacityOnLoad {
         from { opacity: 0; }
-        to { opacity: .9; }
+        to { opacity: 1; }
     }
 
     @keyframes widthOnLoadMiddle {
