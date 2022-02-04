@@ -25,34 +25,37 @@ export default function ProductPage() {
         dispatch(loadCart)
     }
     handleCart();
-  }, [dispatch]);
+  }, [dispatch, cart]);
 
-  function handleRemove(){
-    dispatch(removeFromCart(cart))
+  function handleRemove(id){
+    dispatch(removeFromCart(id))
+    console.log(dispatch(removeFromCart(id)))
   }
 
   return (
     <StyledProduct>
       <Nav />
       {
-          cart.product.cart.length === 0 || cart.length || cart.product === undefined ?  (
+          cart.length ? (
             <h1>Your Cart is empty</h1>
-          ): (
+          ):  cart.items === undefined ? ( 
+            <h1>Your Cart is empty</h1>
+        ): (
             <div className="product-wrapper">
                 <h1>Your Cart</h1>
                 {
-                    cart.product.cart.map((product, key) => {
+                    cart.items.map((product, key) => {
                         return (
                             <div key={key} >
                                 <div className="product-container" >
-                                    <img src={product.image} alt="" />
+                                    <img src={product.product.image} alt="" />
                                         <div className="info-container">
                                             <div className="title-container">
-                                                <h3>{product.title}</h3>
-                                                <h3>${product.price}</h3>
+                                                <h3>{product.product.title}</h3>
+                                                <h3>${product.product.price}</h3>
                                             </div>
                                             <div className="button-container">
-                                                <button id="remove" onClick={()=> {handleRemove(cart)}}>Remove</button>
+                                                <button id="remove" onClick={()=> {handleRemove(product.product.id)}}>Remove</button>
                                             </div>
                                     </div>
                                 </div>
@@ -60,7 +63,7 @@ export default function ProductPage() {
                         )
                     })
                 }
-                <h3 id="total">Total: $</h3>
+                <h3 id="total">Total: ${cart.reduce}</h3>
                 <Link to={"/"} id="checkout">Proceed to Checkout</Link>
             </div>
         )

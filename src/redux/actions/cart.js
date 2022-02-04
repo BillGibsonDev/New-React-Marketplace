@@ -4,16 +4,16 @@ export const addToCart = (product) => {
   return {
     type: ADD_TO_CART,
     payload: {
-      cart: [ product ],
+      product,
     },
   };
 }
 
-export const removeFromCart = (itemId) => {
+export const removeFromCart = (id) => {
   return {
     type: REMOVE_FROM_CART,
     payload: {
-      id: itemId,
+     id,
     },
   };
 }

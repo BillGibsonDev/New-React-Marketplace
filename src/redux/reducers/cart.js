@@ -1,26 +1,32 @@
 import { REMOVE_FROM_CART, ADD_TO_CART, LOAD_CART } from '../constants/actionTypes';
 
-const reducer = (cart = [], action) => {
+const initialState = {
+ items: [],
+}
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TO_CART: {
+    case ADD_TO_CART:
       return {
-        ...cart,
-        product: action.payload, 
+        ...state,
+       items: [ ...state.items, action.payload ],
       };
+
+    case REMOVE_FROM_CART:{
+      console.log(action.payload.id)
+      return state.items.filter((item) => item.id !== action.payload.id);
     }
-    case REMOVE_FROM_CART: {
-      return { 
-        ...cart
-      };
-    }
+
     case LOAD_CART: {
       return {
-        ...cart,
+        ...state,
        product: action.payload
       };
     }
+
     default:
-      return cart;
+      return {
+        ...state
+      };
   }
 };
 
