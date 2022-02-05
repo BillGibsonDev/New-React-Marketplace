@@ -1,8 +1,3 @@
-import { useRef } from 'react';
-
-// images
-import Right from '../images/arrowRight.png';
-import Left from '../images/arrowLeft.png';
 
 // styled
 import styled from 'styled-components';
@@ -11,12 +6,6 @@ import styled from 'styled-components';
 import Product from '../components/Product';
 
 export default function HomePage({products}) {
-
-    const buttonRef = useRef();
-
-    const scroll = (scrollOffset) => {
-        buttonRef.current.scrollLeft += scrollOffset;
-    };
 
     return (
         <StyledProducts>
@@ -32,8 +21,6 @@ export default function HomePage({products}) {
                         </div>
                     ): (
                         <>
-                            <button id="left-button" ref={buttonRef} onClick={() => scroll(-100)}><img src={Left} alt="" /></button>
-                            <button id="right-button" ref={buttonRef} onClick={() => scroll(100)}><img src={Right} alt="" /></button>
                             <div className="product-container" id="product-container">
                                 {
                                     products.map((product, key) =>{

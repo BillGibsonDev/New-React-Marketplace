@@ -11,7 +11,7 @@ import Star from '../images/star.png';
 export default function Product({title, image, id, rate, count, price}) {
 
   return ( 
-    <StyledProduct>
+    <StyledProduct id="product">
       <div className="product-wrapper">
         <Link to={`/products/${id}`}><img src={image} alt="" /></Link>
         <div className="title-wrapper">
@@ -44,25 +44,27 @@ export default function Product({title, image, id, rate, count, price}) {
 }
 
 const StyledProduct = styled.div`
-  max-width: 350px;
-  height: 350px;
+  max-width: 450px;
+  min-width: 350px;
+  min-height: 350px;
   display: flex;
-  background: white;
-  margin: 0 20px;
+  margin:auto;
   border-radius: 8px;
   padding: 6px 2px;
   @media (max-width: 600px){
     max-width: 500px;
+    min-width: 80vw;
     width: 100%;
-    margin: auto 50px auto 40px;
+    margin: auto;
   }
     .product-wrapper {
       display: flex;
       flex-direction: column;
       margin: auto;
+      width: 100%;
       a {
         margin: auto;
-        width: 250px;
+        min-width: 90%;
         img {
           width: 100%;
           height: 250px;

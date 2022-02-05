@@ -1,6 +1,4 @@
 
-import { useEffect } from 'react';
-
 // components
 import Nav from '../components/Nav';
 
@@ -11,35 +9,23 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // redux
-import { removeFromCart, loadCart } from '../redux/actions/cart.js';
-import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart } from '../redux/actions/cart.js';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
-export default function ProductPage() {
+export default function CartPage() {
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const cart = useSelector((state) => state.cart);
-
-  useEffect(() => {
-    function handleCart(){
-        dispatch(loadCart)
-    }
-    handleCart();
-  }, [dispatch, cart]);
-
-  function handleRemove(id){
-    dispatch(removeFromCart(id))
-    console.log(dispatch(removeFromCart(id)))
-  }
+     const cart = useSelector((state) => state.cart, shallowEqual);
 
   return (
-    <StyledProduct>
+    <StyledCart>
       <Nav />
-      {
-          cart.length ? (
-            <h1>Your Cart is empty</h1>
-          ):  cart.items === undefined ? ( 
-            <h1>Your Cart is empty</h1>
+        { 
+            cart.length === 0 ? (
+                <h1>Your cart is empty</h1>
+            ): cart.items === undefined ? ( 
+                <h1>Your Cart is empty</h1>
         ): (
             <div className="product-wrapper">
                 <h1>Your Cart</h1>
@@ -55,7 +41,7 @@ export default function ProductPage() {
                                                 <h3>${product.product.price}</h3>
                                             </div>
                                             <div className="button-container">
-                                                <button id="remove" onClick={()=> {handleRemove(product.product.id)}}>Remove</button>
+                                                <button id="remove" onClick={()=> dispatch(removeFromCart(product.product.id))}>Remove</button>
                                             </div>
                                     </div>
                                 </div>
@@ -63,22 +49,22 @@ export default function ProductPage() {
                         )
                     })
                 }
-                <h3 id="total">Total: ${cart.reduce}</h3>
+                <h3 id="total">Total: $</h3>
                 <Link to={"/"} id="checkout">Proceed to Checkout</Link>
             </div>
         )
-    }
-    </StyledProduct>
+      }
+    </StyledCart>
   );
 }
 
-const StyledProduct = styled.div`
+const StyledCart = styled.div`
   background: #fff;
   min-height: 80vh;
   margin-top: 20px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  @media (max-width: 600px){
+  @media (max-width: 700px){
     margin-top: 0;
   }
   h1 {
@@ -92,29 +78,44 @@ const StyledProduct = styled.div`
         margin: auto;
         position: relative;
         justify-content: space-between;
-        width: 80%;
+        width: 100%;
         max-height: 20vh;
         border-top: 1px solid #d1d1d1;
         border-bottom: 1px solid #d1d1d1;
         padding: 2% 0;
+        @media (max-width: 700px){
+            max-height: 34vh;
+        }
         img {
             width: 100px;
             max-width: 20%;
+            @media (max-width: 700px){
+                max-width: 30%;
+            }
         }
             .info-container {
                 display: flex;
                 flex-direction: column;
                 width: 80%;
+                @media (max-width: 700px){
+                    width: 60%;
+                }
                 .title-container {
                     display: flex;
                     flex-direction: column;
                     height: 90%;
                     h3, h3 {
                         font-size: 16px;
+                        @media (max-width: 610px){
+                            font-size: 12px;
+                        }
                     }
                 }
                 .button-container {
                     margin: auto 0;
+                    @media (max-width: 700px){
+                        margin-top: 20px;
+                    }
                 }
             }
         }

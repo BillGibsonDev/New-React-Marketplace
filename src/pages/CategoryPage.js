@@ -68,12 +68,14 @@ const [ products, setProducts ] = useState([]);
 }
 
 const StyledCategory = styled.div`
-    
+    background: #ffffff;
     .product-wrapper {
         display: flex;
         flex-direction: column;
         background: #ffffff;
         position: relative;
+        width: 95%;
+        margin: auto;
         h1 {
             text-transform: capitalize;
             margin: 5% auto;
@@ -88,10 +90,10 @@ const StyledCategory = styled.div`
             padding: 20px 0;
             margin: auto;
             position: relative;
-            @media (max-width: 800px){
+            @media (max-width: 1320px){
                 grid-template-columns: 1fr 1fr;
             }
-            @media (max-width: 600px){
+            @media (max-width: 800px){
                 grid-template-columns: 1fr;
             }
             .placeholder {
@@ -110,5 +112,8 @@ const StyledCategory = styled.div`
                 }
             }
         }
+    }
+    #product {
+        margin-bottom: 50px;
     }
 `;

@@ -43,7 +43,7 @@ const StyledSocial = styled.div`
         color: #fff;
         font-size: 4em;
         margin-left: 1.5%;
-        @media (max-width: 600px){
+        @media (max-width: 700px){
             margin: auto;
             margin-bottom: 30px;
         }
@@ -54,16 +54,23 @@ const StyledSocial = styled.div`
         align-items: center;
         width: 95%;
         margin: auto;
-        @media (max-width: 600px){
+        @media (max-width: 700px){
             flex-direction: column;
+            align-items: center;
         }
         .icon-container {
             display: flex;
-            width: 30%;
+            width: 20%;
             justify-content: space-between;
-            @media (max-width: 600px){
-               width: 50%;
-               margin-bottom: 20px;
+            @media (max-width: 1040px){
+                width: 25%;
+            }
+            @media (max-width: 700px){
+                width: 40%;
+                margin-bottom: 20px;
+            }
+            @media (max-width: 475px){
+                width: 60%;
             }
             a {
                 width: 30px;
@@ -81,7 +88,7 @@ const StyledSocial = styled.div`
         .form-container {
             display: flex;
             flex-direction: column;
-            @media (max-width: 600px){
+            @media (max-width: 700px){
                 width: 90%;
                 margin: auto;
             }
@@ -89,36 +96,38 @@ const StyledSocial = styled.div`
                 color: white;
                 font-size: 20px;
                 margin-bottom: 6px;
-                @media (max-width: 600px){
+                @media (max-width: 700px){
                     margin: auto;
                     margin-bottom: 6px;
                 }
             }
             form {
                 height: 30px;
-                @media (max-width: 600px){
-                    width: 100%;
+                width: 60%;
+                display: flex;
+                @media (max-width: 700px){
                     margin: auto;
-                    display: flex;
                     align-items: center;
+                    width: 90%;
                 }
                 input {
                     height: 30px;
-                    width: 300px;
+                    min-width: 250px;
+                    width: 80%;
                     background: #adadad;
-                    @media (max-width: 850px){
-                        width: 250px;
-                        margin: auto;
-                    }
                     @media (max-width: 600px){
-                       width: 90%;
+                        min-width: 150px;
+                    }
+                    @media (max-width: 400px){
+                       width: 80%;
+
                     }
                 }
                 button{
                     border: none;
                     font-weight: 700;
                     height: 100%;
-                    width: 50px;
+                    min-width: 50px;
                 }
             }
         }

@@ -62,8 +62,11 @@ const StyledFooter = styled.footer`
     }
     .icon-container {
       display: flex;
-      width: 30%;
+      width: 20%;
       justify-content: space-between;
+      @media (max-width: 1040px){
+        width: 25%;
+      }
       @media (max-width: 700px){
         width: 50%;
         margin-bottom: 20px;

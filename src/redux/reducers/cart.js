@@ -12,11 +12,9 @@ const reducer = (state = initialState, action) => {
       };
 
     case REMOVE_FROM_CART:{
-      console.log(action.payload.id)
-      return {
-        items: [...state.items.filter((item) => item.id !== action.payload.id)]
-      };
+      return { items: [...state.items = state.items.filter((item) => item.id !== action.payload.id)]
     }
+  }
 
     case LOAD_CART: {
       return {
