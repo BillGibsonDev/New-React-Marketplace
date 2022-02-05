@@ -48,9 +48,10 @@ const StyledProduct = styled.div`
   min-width: 350px;
   min-height: 350px;
   display: flex;
-  margin:auto;
+  margin: auto 10px;
   border-radius: 8px;
   padding: 6px 2px;
+  border: 1px solid #f0f0f0;
   @media (max-width: 600px){
     max-width: 500px;
     min-width: 80vw;
@@ -68,6 +69,7 @@ const StyledProduct = styled.div`
         img {
           width: 100%;
           height: 250px;
+          object-fit: contain;
         }
       }
       .title-wrapper {
