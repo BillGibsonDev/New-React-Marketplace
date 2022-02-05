@@ -14,19 +14,26 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
 
+// redux
+import { useDispatch } from 'react-redux';
+import { setItemList } from './redux/actions/cart.js';
+
 function App() {
 
   const [ products, setProducts ] = useState([]);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     function handleProducts(){
       axios.get(`https://fakestoreapi.com/products`)
       .then(function(response){
-        setProducts(response.data)
+        setProducts(response.data);
+        dispatch(setItemList(response.data));
       })
     }
     handleProducts();
-  }, []);
+  }, [dispatch]);
   
 
   return (

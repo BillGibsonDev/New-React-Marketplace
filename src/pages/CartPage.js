@@ -9,51 +9,65 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // redux
-import { removeFromCart } from '../redux/actions/cart.js';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { connect } from "react-redux";
 
-export default function CartPage() {
+// component
+import CartProduct from '../components/CartProduct';
 
-    const dispatch = useDispatch();
 
-     const cart = useSelector((state) => state.cart, shallowEqual);
+const CartPage = ({cart}) => {
 
   return (
     <StyledCart>
       <Nav />
-        { 
-            cart.length === 0 ? (
-                <h1>Your cart is empty</h1>
-            ): cart.items === undefined ? ( 
-                <h1>Your Cart is empty</h1>
-        ): (
-            <div className="product-wrapper">
-                <h1>Your Cart</h1>
-                {
-                    cart.items.map((product, key) => {
-                        return (
-                            <div key={key} >
-                                <div className="product-container" >
-                                    <img src={product.product.image} alt="" />
-                                        <div className="info-container">
-                                            <div className="title-container">
-                                                <h3>{product.product.title}</h3>
-                                                <h3>${product.product.price}</h3>
-                                            </div>
-                                            <div className="button-container">
-                                                <button id="remove" onClick={()=> dispatch(removeFromCart(product.product.id))}>Remove</button>
-                                            </div>
+        <div className="product-wrapper">
+            <h1>Your Cart</h1>
+            { 
+                cart.cart.length === 0 ? (
+                    <div className="placeholder">
+                        <h1>Your cart is empty!</h1>
+                        <Link to={"/"}>Continue Shopping</Link>
+                    </div>
+                ): cart.cart === undefined ? (
+                    <div className="placeholder">
+                        <h1>Your cart is empty!</h1>
+                    </div>
+                ): cart.cart === [] ? ( 
+                    <div className="placeholder">
+                        <h1>Your cart is empty!</h1>
+                    </div>
+                ): (
+                    <>
+                        {
+                            cart.cart.map((product, index) => {
+                                return (
+                                    <div key={index}>
+                                        {
+                                            product.product === undefined ? (
+                                                <div key={index}>
+                                                    <h1>Your cart is empty!</h1>
+                                                </div>
+                                            ): (
+                                                <CartProduct
+                                                    key={index}
+                                                    title={product.product.title}
+                                                    image={product.product.image}
+                                                    id={product.product.id}
+                                                    price={product.product.price}
+                                                    product={product.product}
+                                                    index={index}
+                                                />
+                                            )
+                                        }
                                     </div>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-                <h3 id="total">Total: $</h3>
-                <Link to={"/"} id="checkout">Proceed to Checkout</Link>
-            </div>
-        )
-      }
+                                )}
+                            )}
+                        <h3 id="total">Total: $</h3>
+                        <Link to={"/"} id="checkout">Proceed to Checkout</Link>
+                    </>
+                )
+            }
+        </div>
     </StyledCart>
   );
 }
@@ -73,6 +87,28 @@ const StyledCart = styled.div`
   .product-wrapper {
     width: 95%;
     margin: auto;
+    .placeholder {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-height: 20vh;
+        border-top: 1px solid #d1d1d1;
+        border-bottom: 1px solid #d1d1d1;
+        padding: 2% 0;
+        @media (max-width: 700px){
+            max-height: 34vh;
+        }
+        h1 {
+            
+        }
+        a {
+
+        }
+    }
     .product-container {
         display: flex;
         margin: auto;
@@ -140,3 +176,12 @@ const StyledCart = styled.div`
         }
     }
 `;
+
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  };
+};
+
+
+export default connect(mapStateToProps)(CartPage);
