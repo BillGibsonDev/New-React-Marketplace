@@ -2,13 +2,15 @@
 
 // images
 import LandingImage from '../images/landing2.jpg';
-import Cart from '../images/cart.png';
 
 // router
 import { Link } from 'react-router-dom';
 
 // styled
 import styled from 'styled-components';
+
+// component
+import CartIcon from '../components/CartIcon';
 
 
 export default function HomePage({products}) {
@@ -23,9 +25,9 @@ export default function HomePage({products}) {
                         <Link to={"/"} id="logo">B.</Link>
                         <nav>
                             <Link to={"/"}>Home</Link>
-                            <Link to={"/"}>Shop</Link>
+                            <Link to={"/categories"}>Shop</Link>
                         </nav>
-                        <Link to={"/cart"}><img id="cart" src={Cart} alt="" /></Link>
+                        <CartIcon />
                     </div>
                     <div className="text-container">
                         <div className="top-container">
@@ -40,7 +42,7 @@ export default function HomePage({products}) {
                     </div>
                     <h1 id="brand">Branded.</h1>
                     <div className="button-container">
-                        <Link to={"/"} id="shop-button">Shop</Link>
+                        <Link to={"/categories"} id="shop-button">Shop</Link>
                     </div>
                 </div>
         </StyledLanding>
@@ -108,10 +110,6 @@ const StyledLanding = styled.div`
             #logo {
                 font-size: 3em;
                 font-weight: 700;
-            }
-            #cart {
-                width: 40px;
-                height: 40px;
             }
         }
         #brand {

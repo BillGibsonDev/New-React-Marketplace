@@ -1,4 +1,3 @@
-
 // styled
 import styled from 'styled-components';
 
@@ -6,14 +5,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // images
-import Womens from '../images/womens.jpg'
+import Womens from '../images/womens2.jpg'
 import Star from '../images/star.png';
 
-export default function Promo({products}) {
-
+export default function Category({products, category}) {
 
     return (
-        <StyledPromo>
+        <StyledCategory>
             {
                 products === undefined ? (
                     <div className="promo-container">
@@ -26,7 +24,7 @@ export default function Promo({products}) {
                             <div className="rating-container"></div>
                         </div>
                     </div>
-                ): (
+                ): category === undefined ? (
                     <div className="promo-container">
                         <img id="promo" src={Womens} alt="" />
                         <div className="product-container">
@@ -45,58 +43,63 @@ export default function Promo({products}) {
                             <h4>$ {products[19].price}</h4>
                         </div>
                     </div>
+                ): (
+                    <div className="promo-container">
+                        {
+                            products.filter((products) => products.category === `${category}`).map((product, key) => {
+                                return (
+                                    <div className="product-container" key={key}>
+                                        <Link id="image-link" to={`/products/${product.id}`}>
+                                            <img src={product.image} alt="" />
+                                        </Link>
+                                        <Link id="title-link" to={`/products/${product.id}`}>{product.title}</Link>
+                                        <div className="rating-container">
+                                            <div className="rate-container" >
+                                                {Array.from(Array(Math.round(product.rating.rate)), (e, i) => {
+                                                    return <img src={Star} key={i} alt="" />
+                                                })}
+                                            </div>
+                                            <h4>{product.rating.count}</h4>
+                                        </div>
+                                        <h4>$ {product.price}</h4>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 )
             }
-        </StyledPromo>
+        </StyledCategory>
     );
 }
                     
-const StyledPromo = styled.div`
+const StyledCategory = styled.div`
     background: #ffffff;
-    min-height: 50vh;
-    margin: auto;
+    width: 50%;
+    max-height: 50%;
     .promo-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 10px;
-        grid-column-gap: 10px;
-        position: relative;
-        min-height: 80vh;
-        @media (max-width: 450px){
-            grid-template-columns: 1fr;
-            grid-row-gap: 0;
-            grid-column-gap: 0;
-            background: #fff;
-            padding: 2%;
-        }
+        overflow-Y: scroll;
+        max-height: 80vh;
         #promo {
-            min-height: 100%;
-            width: 100%;
-            transition: 0.2s;
-            transition-timing-function: ease-in-out;
-            @media (max-width: 450px){
-                display: none;
-            }
+            width: 50%;
+            height: 50%;
         }
         .product-container {
-            width: 100%;
-            min-height: 80vh;
+            width: 80%;
+            min-hieght: 50%;
             position: relative;
-            background: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            @media (max-width: 375px){
-                width: 95%;
-                margin: auto;
-            }
+            margin: 20px auto;
             #image-link {
-                width: 100%;
-                height: 70%;
+                max-width: 90%;
+                height: 50%;
+                margin: auto;
                 img {
-                    object-fit: contain;
                     width: 100%;
                     height: 100%;
+                    object-fit: contain;
                 }
             }
             #title-link {
@@ -132,6 +135,23 @@ const StyledPromo = styled.div`
             }
         }
     }
-
+    #page {
+        display: block;
+        .product-container {
+            max-height: 50vh;
+            min-height: 5ovh;
+            .image-link {
+                height: 50%;
+                width: 50%;
+            }
+            #promo {
+                min-height: 30vh;
+                max-height: 30vh;
+                min-width: 100%;
+                object-fit: cover;
+            }
+        }
+        
+    }
 
 `;

@@ -5,8 +5,8 @@ import styled from 'styled-components';
 // router
 import { Link } from 'react-router-dom';
 
-// images
-import Cart from '../images/cart.png';
+// components
+import CartIcon from './CartIcon';
 
 export default function Nav() {
   return (    
@@ -14,9 +14,9 @@ export default function Nav() {
       <Link to={"/"} id="logo">B.</Link>
       <nav>
           <Link to={"/"}>Home</Link>
-          <Link to={"/"}>Shop</Link>
+          <Link to={"/categories"}>Shop</Link>
       </nav>
-      <Link to={"/cart"}><img id="cart" src={Cart} alt="" /></Link>
+      <CartIcon />
     </StyledNav>
   );
 }

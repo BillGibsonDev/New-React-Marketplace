@@ -13,6 +13,7 @@ import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
+import CategoriesPage from './pages/CatagoriesPage';
 
 // redux
 import { useDispatch } from 'react-redux';
@@ -33,8 +34,8 @@ function App() {
       })
     }
     handleProducts();
+    window.scrollTo(0, 0);
   }, [dispatch]);
-  
 
   return (
     <>
@@ -42,6 +43,8 @@ function App() {
 
       <Routes>
             <Route path='/' exact element={<HomePage products={products} />} />
+
+            <Route path="/categories" exact element={<CategoriesPage products={products} />} />
 
             <Route path="/products/:id" exact element={<ProductPage products={products} />} />
 

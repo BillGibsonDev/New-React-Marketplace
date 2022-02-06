@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 // components
 import Nav from '../components/Nav';
+import Sugesstions from '../components/Suggestions';
 
 // styled
 import styled from 'styled-components';
@@ -17,7 +18,7 @@ import Star from '../images/star.png';
 import { addToCart } from '../redux/actions/cart.js';
 import { useDispatch } from 'react-redux';
 
-export default function ProductPage() {
+export default function ProductPage({products}) {
     
     const { id } = useParams();
 
@@ -90,6 +91,10 @@ export default function ProductPage() {
         </div>
         )
       }
+      <Sugesstions
+        products={products}
+        category={product.category}
+      />
     </StyledProduct>
   );
 }
