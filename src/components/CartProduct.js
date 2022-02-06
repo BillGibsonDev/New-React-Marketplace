@@ -1,20 +1,30 @@
+import { useState } from 'react';
+
 // styled
 import styled from 'styled-components';
 
+// router
+import { Link } from 'react-router-dom';
+
 // redux
-import { removeFromCart } from '../redux/actions/cart.js';
+import { removeFromCart, adjustQty } from '../redux/actions/cart.js';
 import { connect } from "react-redux";
 
-const CartProduct = ({ title, price, image, id, removeFromCart, index }) => {
-
+const CartProduct = ({ title, price, image, id, removeFromCart, adjustQty, index, qty }) => {
 
   return (
     <StyledProduct>
         <div className="product-container" >
             <img src={image} alt="" />
                 <div className="info-container">
-                    <div className="title-container">
-                        <h3>{title}</h3>
+                    <div className="title-wrapper">
+                        <div className="title-container">
+                        <Link to={`/products/${id}`}>{title}</Link>
+                        <label htmlFor="">Quanity:  
+                            <input id="qty" type="number" min="1" max="10" defaultValue={qty}
+                                onChange={(e) => adjustQty(id, e.target.value)}  />
+                        </label>
+                        </div>
                         <h3>${price}</h3>
                     </div>
                     <div className="button-container">
@@ -46,8 +56,9 @@ const StyledProduct = styled.div`
             max-height: 34vh;
         }
         img {
-            width: 100px;
-            max-width: 20%;
+            width: 200px;
+            max-width: 30%;
+            object-fit: contain;
             @media (max-width: 700px){
                 max-width: 30%;
             }
@@ -59,14 +70,37 @@ const StyledProduct = styled.div`
                 @media (max-width: 700px){
                     width: 60%;
                 }
-                .title-container {
+                .title-wrapper {
                     display: flex;
                     flex-direction: column;
                     height: 90%;
-                    h3, h3 {
+                    .title-container {
+                        display: flex;
+                        justify-content: space-between;
+                        @media (max-width: 710px){
+                            flex-direction: column;
+                        }
+                        label {
+                            font-size: 14px;
+                            @media (max-width: 710px){
+                                margin: 10px 0;
+                            }
+                            input {
+                                margin-left: 4px;
+                                width: 40px;
+                            }
+                        }
+                    }
+                    h3, a {
+                        color: black;
                         font-size: 16px;
                         @media (max-width: 610px){
                             font-size: 12px;
+                        }
+                    }
+                    a {
+                        &:hover {
+                            text-decoration: underline;
                         }
                     }
                 }
@@ -87,6 +121,7 @@ const StyledProduct = styled.div`
 const mapDispatchToProps = (dispatch) => {
   return {
     removeFromCart: (product) => dispatch(removeFromCart(product)),
+    adjustQty: (id, qty) => dispatch(adjustQty(id, qty)),
   };
 };
 

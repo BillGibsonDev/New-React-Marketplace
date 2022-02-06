@@ -37,6 +37,25 @@ button {
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+#shop-button {
+    background: #000000;
+    padding: 0 100px;
+    font-size: 40px;
+    color: white;
+    border: 2px white solid;
+    transition: 0.2s;
+    font-weight: bold;
+    transition: 0.3s;
+    &:hover {
+        color: black;
+        background: #fff;
+        text-decoration: underline;
+        border: #000000 solid 2px;
+    }
+    }
+
+
 `;
 
 export default GlobalStyles;

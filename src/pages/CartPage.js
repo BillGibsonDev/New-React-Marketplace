@@ -1,4 +1,5 @@
 
+
 // components
 import Nav from '../components/Nav';
 
@@ -26,7 +27,7 @@ const CartPage = ({cart}) => {
                 cart.cart.length === 0 ? (
                     <div className="placeholder">
                         <h1>Your cart is empty!</h1>
-                        <Link to={"/"}>Continue Shopping</Link>
+                        <Link id="shop-button" to={"/"}>Continue Shopping</Link>
                     </div>
                 ): cart.cart === undefined ? (
                     <div className="placeholder">
@@ -55,6 +56,7 @@ const CartPage = ({cart}) => {
                                                     id={product.product.id}
                                                     price={product.product.price}
                                                     product={product.product}
+                                                    qty={product.qty}
                                                     index={index}
                                                 />
                                             )
@@ -109,53 +111,6 @@ const StyledCart = styled.div`
 
         }
     }
-    .product-container {
-        display: flex;
-        margin: auto;
-        position: relative;
-        justify-content: space-between;
-        width: 100%;
-        max-height: 20vh;
-        border-top: 1px solid #d1d1d1;
-        border-bottom: 1px solid #d1d1d1;
-        padding: 2% 0;
-        @media (max-width: 700px){
-            max-height: 34vh;
-        }
-        img {
-            width: 100px;
-            max-width: 20%;
-            @media (max-width: 700px){
-                max-width: 30%;
-            }
-        }
-            .info-container {
-                display: flex;
-                flex-direction: column;
-                width: 80%;
-                @media (max-width: 700px){
-                    width: 60%;
-                }
-                .title-container {
-                    display: flex;
-                    flex-direction: column;
-                    height: 90%;
-                    h3, h3 {
-                        font-size: 16px;
-                        @media (max-width: 610px){
-                            font-size: 12px;
-                        }
-                    }
-                }
-                .button-container {
-                    margin: auto 0;
-                    @media (max-width: 700px){
-                        margin-top: 20px;
-                    }
-                }
-            }
-        }
-    }
     #total {
         margin-bottom: 20px;
     }
@@ -173,6 +128,17 @@ const StyledCart = styled.div`
             color: #5f5f5f;
             background: white;
             border: 1px solid #5f5f5f;
+        }
+    }
+    #shop-button {
+        font-size: 30px;
+        margin-top: 20px;
+        @media (max-width: 700px){
+            font-size: 20px;
+        }
+        @media (max-width: 450px){
+            font-size: 14px;
+            padding: 20px 100px;
         }
     }
 `;

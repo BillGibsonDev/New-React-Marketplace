@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SET_ITEMS_LIST } from '../constants/actionTypes';
+import { ADD_TO_CART, REMOVE_FROM_CART, SET_ITEMS_LIST, ADJUST_ITEM_QTY } from '../constants/actionTypes';
 
 export const addToCart = (product) => {
   return {
@@ -17,5 +17,15 @@ export const removeFromCart = (index) => {
     },
   };
 }
+
+export const adjustQty = (itemID, qty) => {
+  return {
+    type: ADJUST_ITEM_QTY,
+    payload: {
+      id: itemID,
+      qty,
+    },
+  };
+};
 
 export const setItemList = payload => ({ type: SET_ITEMS_LIST, payload })
