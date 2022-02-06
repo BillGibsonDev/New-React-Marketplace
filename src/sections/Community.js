@@ -99,6 +99,15 @@ const StyledCommunity = styled.div`
         width: 90%;
         margin-top: 10%;
         animation: opacityOnLoad 4s 1;
+        @media (max-width: 800px){
+            margin-top: 20%;
+        }
+        @media (max-width: 600px){
+            margin-top: 5%;
+        }
+        @media (max-width: 415x){
+            margin-top: 30%;
+        }
     }
     .icon-container {
         display: flex;

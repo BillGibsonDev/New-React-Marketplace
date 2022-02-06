@@ -107,6 +107,9 @@ const StyledCategory = styled.div`
                 font-weight: 700;
                 font-size: 20px;
                 margin-top: 10px;
+                @media (max-width: 700px){
+                    font-size: 14px;
+                }
                 &:hover {
                     text-decoration: underline;
                 }
@@ -121,17 +124,27 @@ const StyledCategory = styled.div`
                     img {
                         width: 30px;
                         height: 30px;
+                        @media (max-width: 700px){
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
                 h4 {
                     margin-left: 10px;
                     font-size: 18px;
+                    @media (max-width: 700px){
+                        font-size: 14px;
+                    }
                 }
             }
             h4 {
                 font-size: 20px;
                 color: #3f3f3f;
                 transition: 0.2s;
+                @media (max-width: 700px){
+                    font-size: 16px;
+                }
             }
         }
     }

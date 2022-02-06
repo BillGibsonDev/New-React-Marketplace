@@ -90,10 +90,10 @@ const StyledCategory = styled.div`
             padding: 20px 0;
             margin: auto;
             position: relative;
-            @media (max-width: 1320px){
+            @media (max-width: 1420px){
                 grid-template-columns: 1fr 1fr;
             }
-            @media (max-width: 800px){
+            @media (max-width: 835px){
                 grid-template-columns: 1fr;
             }
             .placeholder {

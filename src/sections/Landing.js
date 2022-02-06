@@ -61,6 +61,7 @@ const StyledLanding = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
         opacity: 1;
@@ -70,9 +71,7 @@ const StyledLanding = styled.div`
             height: 100%;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
-            @media (max-width: 600px){
-                object-fit: cover;
-            }
+            object-fit: cover;
         }
     }
     .landing-container {
@@ -119,7 +118,7 @@ const StyledLanding = styled.div`
             justify-content: flex-end;
             width: 90%;
             animation: opacityOnLoad 4s 1;
-            @media (max-width: 375px){
+            @media (max-width: 800px){
                 margin-top: 20%;
             }
         }

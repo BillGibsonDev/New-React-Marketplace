@@ -47,6 +47,10 @@ button {
     transition: 0.2s;
     font-weight: bold;
     transition: 0.3s;
+    @media (max-width: 700px){
+        padding: 0 100px;
+        font-size: 30px;
+    }
     &:hover {
         color: black;
         background: #fff;
