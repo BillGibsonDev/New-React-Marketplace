@@ -125,6 +125,7 @@ const StyledSocial = styled.div`
                 }
                 button{
                     border: none;
+                    color: black;
                     font-weight: 700;
                     height: 100%;
                     min-width: 50px;

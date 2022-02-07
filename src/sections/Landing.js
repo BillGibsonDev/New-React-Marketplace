@@ -118,7 +118,7 @@ const StyledLanding = styled.div`
             justify-content: flex-end;
             width: 90%;
             animation: opacityOnLoad 4s 1;
-            @media (max-width: 800px){
+            @media (max-width: 950px){
                 margin-top: 20%;
             }
         }
@@ -133,8 +133,11 @@ const StyledLanding = styled.div`
     .text-container {
         position: relative;
         margin-top: 20%;
-        @media (max-width: 375px){
+        @media (max-width: 875px){
             margin-top: 30%;
+        }
+        @media (max-width: 575px){
+            margin-top: 40%;
         }
         .middle-container, .top-container, .bottom-container {
             background: #ffffffb3;

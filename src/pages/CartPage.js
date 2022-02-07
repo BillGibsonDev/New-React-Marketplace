@@ -71,8 +71,10 @@ const CartPage = ({cart}) => {
                                     </div>
                                 )}
                             )}
-                        <h3 id="total">Total: $</h3>
-                        <Link to={"/"} id="checkout">Proceed to Checkout</Link>
+                        <div className="total-container">          
+                            <h3 id="total">Total: $</h3>
+                            <Link to={"/"} id="checkout">Proceed to Checkout</Link>
+                        </div>
                     </>
                 )
             }
@@ -118,23 +120,34 @@ const StyledCart = styled.div`
 
         }
     }
-    #total {
-        margin-bottom: 20px;
-    }
-    #checkout {
-        background: #5f5f5f;
-        margin-top: 20px;
-        padding: 6px 30px;
-        font-weight: 700;
-        color: white;
-        border: none;
-        font-size: 16px;
-        border: 1px solid #ffffff;
-        transition: 0.3s;
-        &:hover {
-            color: #5f5f5f;
-            background: white;
-            border: 1px solid #5f5f5f;
+    .total-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+            #total {
+            font-size: 20px;
+        }
+        #checkout {
+            display: flex;
+            align-items: center;
+            background: #5f5f5f;
+            padding: 6px 30px;
+            font-weight: 700;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border: 1px solid #ffffff;
+            transition: 0.3s;
+            &:hover {
+                color: #5f5f5f;
+                background: white;
+                border: 1px solid #5f5f5f;
+            }
+            @media (max-width: 700px){
+                padding: 6px 15px;
+                font-size: 14px;
+            }
         }
     }
     #shop-button {

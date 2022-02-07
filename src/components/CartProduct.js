@@ -27,7 +27,7 @@ const CartProduct = ({ title, price, image, id, removeFromCart, adjustQty, index
                         <h3>${price}</h3>
                     </div>
                     <div className="button-container">
-                        <button id="remove" onClick={()=> removeFromCart(index)}>Remove</button>
+                        <button id="checkout" onClick={()=> removeFromCart(index)}>Remove</button>
                     </div>
             </div>
         </div>
@@ -81,6 +81,8 @@ const StyledProduct = styled.div`
                         }
                         label {
                             font-size: 14px;
+                            display: flex;
+                            align-items: center;
                             @media (max-width: 710px){
                                 margin: 10px 0;
                             }
@@ -92,9 +94,9 @@ const StyledProduct = styled.div`
                     }
                     h3, a {
                         color: black;
-                        font-size: 16px;
+                        font-size: 20px;
                         @media (max-width: 610px){
-                            font-size: 12px;
+                            font-size: 16px;
                         }
                     }
                     a {
@@ -107,6 +109,24 @@ const StyledProduct = styled.div`
                     margin: auto 0;
                     @media (max-width: 700px){
                         margin-top: 20px;
+                    }
+                    #checkout {
+                        display: flex;
+                        align-items: center;
+                        background: #5f5f5f;
+                        margin-top: 20px;
+                        padding: 6px 15px;
+                        font-weight: 700;
+                        color: white;
+                        border: none;
+                        font-size: 12px;
+                        border: 1px solid #ffffff;
+                        transition: 0.3s;
+                        &:hover {
+                            color: #5f5f5f;
+                            background: white;
+                            border: 1px solid #5f5f5f;
+                        }
                     }
                 }
             }
