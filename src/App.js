@@ -26,6 +26,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     function handleProducts(){
       axios.get(`https://fakestoreapi.com/products`)
       .then(function(response){
@@ -34,7 +35,6 @@ function App() {
       })
     }
     handleProducts();
-    window.scrollTo(0, 0);
   }, [dispatch]);
 
   return (

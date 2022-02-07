@@ -18,6 +18,7 @@ const { category } = useParams();
 const [ products, setProducts ] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     function handleProducts(){
       axios.get(`https://fakestoreapi.com/products/category/${category}`)
       .then(function(response){

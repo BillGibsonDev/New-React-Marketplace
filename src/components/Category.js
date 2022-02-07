@@ -76,17 +76,17 @@ export default function Category({products, category}) {
 const StyledCategory = styled.div`
     background: #ffffff;
     width: 50%;
-    max-height: 50%;
+    max-height: 90vh;
     .promo-container {
         overflow-Y: scroll;
-        max-height: 80vh;
+        max-height: 90vh;
         #promo {
             width: 50%;
             height: 50%;
         }
         .product-container {
             width: 80%;
-            min-hieght: 50%;
+            min-height: 50%;
             position: relative;
             display: flex;
             flex-direction: column;

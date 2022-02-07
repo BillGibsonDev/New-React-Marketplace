@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 
 // components
 import Nav from '../components/Nav';
@@ -17,6 +18,12 @@ import CartProduct from '../components/CartProduct';
 
 
 const CartPage = ({cart}) => {
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
+
 
   return (
     <StyledCart>

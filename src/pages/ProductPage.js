@@ -25,6 +25,7 @@ export default function ProductPage({products}) {
     const [ product, setProduct ] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     function handleProducts(){
       axios.get(`https://fakestoreapi.com/products/${id}`)
       .then(function(response){
