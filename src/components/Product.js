@@ -58,52 +58,52 @@ const StyledProduct = styled.div`
     width: 100%;
     margin: auto;
   }
-    .product-wrapper {
-      display: flex;
-      flex-direction: column;
+  .product-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    a {
       margin: auto;
-      width: 100%;
-      a {
-        margin: auto;
-        min-width: 90%;
-        img {
-          width: 100%;
-          height: 250px;
-          object-fit: contain;
-        }
-      }
-      .title-wrapper {
-        display: flex;
-        flex-direction: column;
-        a {
-          font-size: 13px;
-          color: black;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-        .rating-container {
-                display: flex;
-                align-items: center;
-                margin: 4px 0;
-                .rate-container{
-                    display: flex;
-                    align-items: center;
-                    img {
-                        width: 15px;
-                        height: 15px;
-                    }
-                }
-                h4 {
-                    margin-left: 10px;
-                    font-size: 16px;
-                }
-            }
-        h3 {
-          color: #2e2e2e;
-          font-size: 18px;
-        }
+      min-width: 90%;
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
       }
     }
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      a {
+        font-size: 13px;
+        color: black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .rating-container {
+        display: flex;
+        align-items: center;
+        margin: 4px 0;
+        .rate-container{
+            display: flex;
+            align-items: center;
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        h4 {
+            margin-left: 10px;
+            font-size: 16px;
+        }
+      }
+      h3 {
+        color: #2e2e2e;
+        font-size: 18px;
+      }
+    }
+  }
 
 `;

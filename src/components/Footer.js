@@ -23,16 +23,16 @@ export default function Footer() {
         </div>
         <div className="directory-container">
           <div className="link-container">
-            <Link to={""}>Home</Link>
-            <Link to={""}>About</Link>
-            <Link to={""}>Contact</Link>
-            <Link to={""}>Shop</Link>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>About</Link>
+            <Link to={"/"}>Contact</Link>
+            <Link to={"/"}>Shop</Link>
           </div>
           <div className="link-container">
-            <Link to={""}>Terms of Service</Link>
-            <Link to={""}>Privacy Policy</Link>
-            <Link to={""}>Code of Conduct</Link>
-            <Link to={""}>F.A.Q.</Link>
+            <Link to={"/"}>Terms of Service</Link>
+            <Link to={"/"}>Privacy Policy</Link>
+            <Link to={"/"}>Code of Conduct</Link>
+            <Link to={"/"}>F.A.Q.</Link>
           </div>
         </div>
       </div>

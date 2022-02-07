@@ -57,7 +57,7 @@ button {
         text-decoration: underline;
         border: #000000 solid 2px;
     }
-    }
+}
 
 
 `;

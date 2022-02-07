@@ -83,8 +83,8 @@ const StyledProducts = styled.div`
             margin: auto;
             position: relative;
             overflow-x: scroll;
-            scrollbar-width: thin;          /* "auto" or "thin" */
-            scrollbar-color: #4e4e4e #fff;   /* scroll thumb and track */
+            scrollbar-width: thin;
+            scrollbar-color: #4e4e4e #fff; 
             @media (max-width: 375px){
                 min-height: 50vh;
             }

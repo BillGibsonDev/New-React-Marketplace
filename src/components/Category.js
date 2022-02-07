@@ -17,9 +17,7 @@ export default function Category({products, category}) {
                     <div className="promo-container">
                         <img id="promo" src={Womens} alt="" />
                         <div className="product-container" id="ghost-product">
-                            <Link id="image-link" to={`/`}>
-                                
-                            </Link>
+                            <Link id="image-link" to={`/`}></Link>
                             <Link id="title-link" to={`/`}></Link>
                             <div className="rating-container"></div>
                         </div>

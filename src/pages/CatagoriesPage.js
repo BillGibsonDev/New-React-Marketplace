@@ -22,9 +22,6 @@ export default function CategoriesPage({products}) {
       window.scrollTo(0, 0);
     }, []);
     
-
-
-
     let buttons = document.getElementsByClassName("button");
 
     for (let i = 0; i < buttons.length; i++) {
@@ -33,7 +30,7 @@ export default function CategoriesPage({products}) {
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-        }
+    }
 
     return (
         <StyledCategory>

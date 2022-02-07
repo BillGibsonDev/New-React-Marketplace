@@ -23,24 +23,24 @@ function CartIcon({cart}) {
 }
 
 const StyledCart = styled.div`
-display: flex;
-    a {
-        position: relative;
-        display: block;
-        width: 40px;
-        height: 40px;
-        h6 {
-            font-size: 20px;
-            left: 45%;
-            top: 30%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            color: #000000;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-        }
+  display: flex;
+  a {
+      position: relative;
+      display: block;
+      width: 40px;
+      height: 40px;
+      h6 {
+          font-size: 20px;
+          left: 45%;
+          top: 30%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          color: #000000;
+      }
+      img {
+          width: 100%;
+          height: 100%;
+      }
     }
 `;
 

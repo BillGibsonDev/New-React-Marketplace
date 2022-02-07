@@ -12,10 +12,10 @@ export default function Nav() {
   return (    
     <StyledNav>
       <Link to={"/"} id="logo">B.</Link>
-      <nav>
+      <div className="link-container">
           <Link to={"/"}>Home</Link>
           <Link to={"/categories"}>Shop</Link>
-      </nav>
+      </div>
       <CartIcon />
     </StyledNav>
   );
@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
   padding: 0 2.5%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  nav {
+  .link-container {
       display: flex;
       width: 150px;
       margin: auto;

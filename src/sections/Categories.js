@@ -50,9 +50,6 @@ const StyledCategory = styled.div`
     .category-wrapper {
         width: 95%;
         margin: auto;
-        h1 {
-
-        }
         .category-container {
             padding: 6px 0;
             display: grid;

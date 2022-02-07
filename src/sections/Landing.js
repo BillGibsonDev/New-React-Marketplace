@@ -13,38 +13,38 @@ import styled from 'styled-components';
 import CartIcon from '../components/CartIcon';
 
 
-export default function HomePage({products}) {
+export default function HomePage() {
 
     return (
         <StyledLanding>
             <div className="background-image">
                 <img src={LandingImage} alt="" />
             </div>
-                <div className="landing-container">
-                    <div className="nav-wrapper">
-                        <Link to={"/"} id="logo">B.</Link>
-                        <nav>
-                            <Link to={"/"}>Home</Link>
-                            <Link to={"/categories"}>Shop</Link>
-                        </nav>
-                        <CartIcon />
+            <div className="landing-container">
+                <div className="nav-wrapper">
+                    <Link to={"/"} id="logo">B.</Link>
+                    <div className="link-container">
+                        <Link to={"/"}>Home</Link>
+                        <Link to={"/categories"}>Shop</Link>
                     </div>
-                    <div className="text-container">
-                        <div className="top-container">
-                            <h3 id='top-text'>Style.</h3>
-                        </div>
-                        <div className="middle-container">
-                            <h3>Attitude.</h3>
-                        </div>
-                        <div className="bottom-container">
-                            <h3>Confidence.</h3>
-                        </div>
+                    <CartIcon />
+                </div>
+                <div className="text-container">
+                    <div className="top-container">
+                        <h3 id='top-text'>Style.</h3>
                     </div>
-                    <h1 id="brand">Branded.</h1>
-                    <div className="button-container">
-                        <Link to={"/categories"} id="shop-button">Shop</Link>
+                    <div className="middle-container">
+                        <h3>Attitude.</h3>
+                    </div>
+                    <div className="bottom-container">
+                        <h3>Confidence.</h3>
                     </div>
                 </div>
+                <h1 id="brand">Branded.</h1>
+                <div className="button-container">
+                    <Link to={"/categories"} id="shop-button">Shop</Link>
+                </div>
+            </div>
         </StyledLanding>
     );
 }
@@ -92,7 +92,7 @@ const StyledLanding = styled.div`
             position: absolute;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
-            nav {
+            .link-container {
                 display: flex;
                 width: 150px;
                 margin: auto;

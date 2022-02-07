@@ -80,15 +80,12 @@ const StyledCommunity = styled.div`
         }
         .top-container {
             width: 30%;
-            /* animation: widthOnLoad 2s 1; */
         }
         .middle-container {
             width: 40%;
-          /*  animation: widthOnLoadMiddle 2s 1; */
         }
         .bottom-container {
             width: 50%;
-          /*  animation: widthOnLoadBottom 2s 1; */
         }
     }
     #join {

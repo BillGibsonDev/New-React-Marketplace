@@ -15,20 +15,20 @@ const CartProduct = ({ title, price, image, id, removeFromCart, adjustQty, index
     <StyledProduct>
         <div className="product-container" >
             <img src={image} alt="" />
-                <div className="info-container">
-                    <div className="title-wrapper">
-                        <div className="title-container">
-                        <Link to={`/products/${id}`}>{title}</Link>
-                        <label htmlFor="">Quanity:  
-                            <input id="qty" type="number" min="1" max="10" defaultValue={qty}
-                                onChange={(e) => adjustQty(id, e.target.value)}  />
-                        </label>
-                        </div>
-                        <h3>${price}</h3>
+            <div className="info-container">
+                <div className="title-wrapper">
+                    <div className="title-container">
+                    <Link to={`/products/${id}`}>{title}</Link>
+                    <label htmlFor="">Quanity:  
+                        <input id="qty" type="number" min="1" max="10" defaultValue={qty}
+                            onChange={(e) => adjustQty(id, e.target.value)}  />
+                    </label>
                     </div>
-                    <div className="button-container">
-                        <button id="checkout" onClick={()=> removeFromCart(index)}>Remove</button>
-                    </div>
+                    <h3>${price}</h3>
+                </div>
+                <div className="button-container">
+                    <button id="checkout" onClick={()=> removeFromCart(index)}>Remove</button>
+                </div>
             </div>
         </div>
     </StyledProduct>
@@ -38,9 +38,9 @@ const CartProduct = ({ title, price, image, id, removeFromCart, adjustQty, index
 const StyledProduct = styled.div`
   min-height: 20vh;
   margin-top: 20px;
-  @media (max-width: 700px){
-    margin-top: 0;
-  }
+    @media (max-width: 700px){
+        margin-top: 0;
+    }
     .product-container {
         display: flex;
         margin: auto;
@@ -55,17 +55,17 @@ const StyledProduct = styled.div`
             max-height: 34vh;
         }
         img {
-            width: 200px;
-            max-width: 30%;
-            object-fit: contain;
+        width: 200px;
+        max-width: 30%;
+        object-fit: contain;
             @media (max-width: 700px){
                 max-width: 30%;
             }
         }
-            .info-container {
-                display: flex;
-                flex-direction: column;
-                width: 80%;
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
                 @media (max-width: 700px){
                     width: 60%;
                 }

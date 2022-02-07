@@ -20,13 +20,12 @@ export default function HomePage({products}) {
             {
                 products[19] === undefined ? (
                     <div className="product-container" id="product-container">
-                            <div className="placeholder "></div>
+                            <div className="placeholder"></div>
                         </div>
                 ): (
                     <Promo products={products}/>
                 )
             }
-
             <Social />
             <Categories products={products} />
             <Community />

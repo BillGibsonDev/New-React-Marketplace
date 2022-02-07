@@ -19,9 +19,7 @@ export default function Promo({products}) {
                     <div className="promo-container">
                         <img id="promo" src={Womens} alt="" />
                         <div className="product-container" id="ghost-product">
-                            <Link id="image-link" to={`/`}>
-                                
-                            </Link>
+                            <Link id="image-link" to={`/`}></Link>
                             <Link id="title-link" to={`/`}></Link>
                             <div className="rating-container"></div>
                         </div>
@@ -36,9 +34,11 @@ export default function Promo({products}) {
                             <Link id="title-link" to={`/products/${products[19].id}`}>{products[19].title}</Link>
                             <div className="rating-container">
                                 <div className="rate-container" >
-                                    {Array.from(Array(Math.round(products[19].rating.rate)), (e, i) => {
-                                        return <img src={Star} key={i} alt="" />
-                                    })}
+                                    {
+                                        Array.from(Array(Math.round(products[19].rating.rate)), (e, i) => {
+                                            return <img src={Star} key={i} alt="" />
+                                        })
+                                    }
                                 </div>
                                 <h4>{products[19].rating.count}</h4>
                             </div>

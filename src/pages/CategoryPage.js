@@ -42,25 +42,25 @@ const [ products, setProducts ] = useState([]);
                             <div className="placeholder "></div>
                         </div>
                     ): (
-                            <div className="product-container" id="product-container">
-                                {
-                                    products.map((product, key) =>{
-                                        return (
-                                            <Product
-                                                title={product.title}
-                                                image={product.image}
-                                                description={product.description}
-                                                category={product.category}
-                                                price={product.price}
-                                                count={product.rating.count}
-                                                rate={product.rating.rate}
-                                                id={product.id}
-                                                key={key}
-                                            />
-                                        )
-                                    })
-                                }
-                            </div>
+                        <div className="product-container" id="product-container">
+                            {
+                                products.map((product, key) =>{
+                                    return (
+                                        <Product
+                                            title={product.title}
+                                            image={product.image}
+                                            description={product.description}
+                                            category={product.category}
+                                            price={product.price}
+                                            count={product.rating.count}
+                                            rate={product.rating.rate}
+                                            id={product.id}
+                                            key={key}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
                     )
                 }
             </div>

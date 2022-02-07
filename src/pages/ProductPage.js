@@ -53,7 +53,7 @@ export default function ProductPage({products}) {
               <div className="placeholder "></div>
               <div className="placeholder "></div>
             </div>
-        </div>
+          </div>
         ): (
         <div className="product-wrapper">
           <img src={product.image} alt="" />

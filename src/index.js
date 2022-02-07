@@ -17,8 +17,7 @@ const middleware = [
 ];
 
 const store = createStore(reducers, composeWithDevTools(
-applyMiddleware(...middleware),
-// other store enhancers if any
+  applyMiddleware(...middleware),
 ));
 
 ReactDOM.render(

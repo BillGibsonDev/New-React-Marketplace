@@ -113,12 +113,6 @@ const StyledCart = styled.div`
         @media (max-width: 700px){
             max-height: 34vh;
         }
-        h1 {
-            
-        }
-        a {
-
-        }
     }
     .total-container {
         display: flex;
