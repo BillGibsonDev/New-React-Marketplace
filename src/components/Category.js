@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // images
-import Womens from '../images/womens2.jpg'
+import Womens from '../images/womens.jpg'
 import Star from '../images/star.png';
 
 export default function Category({products, category}) {
