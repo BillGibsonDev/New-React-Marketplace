@@ -70,7 +70,8 @@ const CartPage = ({cart}) => {
                                         }
                                     </div>
                                 )}
-                            )}
+                            )
+                        }
                         <div className="total-container">          
                             <h3 id="total">Total: $</h3>
                             <Link to={"/"} id="checkout">Proceed to Checkout</Link>
@@ -144,15 +145,16 @@ const StyledCart = styled.div`
             }
         }
     }
-    #shop-button {
-        font-size: 30px;
-        margin-top: 20px;
-        @media (max-width: 700px){
-            font-size: 20px;
-        }
-        @media (max-width: 450px){
-            font-size: 14px;
-            padding: 20px 100px;
+        #shop-button {
+            font-size: 30px;
+            margin-top: 20px;
+            @media (max-width: 700px){
+                font-size: 20px;
+            }
+            @media (max-width: 450px){
+                font-size: 14px;
+                padding: 20px 100px;
+            }
         }
     }
 `;
