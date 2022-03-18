@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
       return {
         items: [...state.items],
         cart: state.cart.map((product) =>
-          product.id === action.payload.id
+          product.product.id === action.payload.id
             ? { ...product, qty: action.payload.qty }
             : product
         ),
