@@ -33,6 +33,9 @@ function App() {
         setProducts(response.data);
         dispatch(setItemList(response.data));
       })
+      .catch(function(error){
+        console.log(error)
+      })
     }
     handleProducts();
   }, [dispatch]);

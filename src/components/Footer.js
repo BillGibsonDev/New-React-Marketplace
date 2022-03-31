@@ -19,7 +19,7 @@ export default function Footer() {
           <a href='https://facebook.com' target="_blank" rel="noreferrer"><img src={Facebook} alt="" /></a>
           <a href='https://instagram.com' target="_blank" rel="noreferrer"><img src={Instagram} alt="" /></a>
           <a href='https://pinterest.com' target="_blank" rel="noreferrer"><img src={Pinterest} alt="" /></a>
-          <a href='https://github.com/DevGibby/New-React-Marketplace' target="_blank" rel="noreferrer"><img src={Github} alt="" /></a>
+          <a href='https://github.com/GibbyCodes/New-React-Marketplace' target="_blank" rel="noreferrer"><img src={Github} alt="" /></a>
         </div>
         <div className="directory-container">
           <div className="link-container">
